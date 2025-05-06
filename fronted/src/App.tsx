@@ -1,11 +1,15 @@
 import { RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import router from './routes/Routes';
+import store from './app/store';
 import './App.css';
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   );
 }
 
-export default App; // ודא שיש כאן ייצוא ברירת מחדל
+export default App;
